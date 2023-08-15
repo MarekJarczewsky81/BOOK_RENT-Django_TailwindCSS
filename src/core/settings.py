@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'customers',
     'publishers',
     'rentals',
+    'django-countries'
     
 ]
 
