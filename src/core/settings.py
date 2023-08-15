@@ -37,12 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # our apps
     'authors',
     'books',
     'customers',
     'publishers',
     'rentals',
-    'django-countries'
+    
+    # 3rd party apps
+    'django_countries',
+    
+    
+    
     
 ]
 

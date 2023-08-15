@@ -105,6 +105,8 @@ ENV/
 env.bak/ 
 venv.bak/ 
 
+br-env
+
 # mkdocs documentation 
 /site 
 
@@ -137,3 +139,4 @@ GitHub.sublime-settings
 .history
 
 BOOK_RENT-Django_TailwindCSS.code-workspace
+br_source_code.zip
