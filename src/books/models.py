@@ -1,6 +1,7 @@
 from django.db import models
 from publishers.models import Publisher
 from authors.models import Author
+from django.utils.text import slugify
 
 # Create your models here.
 
@@ -15,6 +16,13 @@ class BookTitle(models.Model):
 
     def __str__(self):
         return f"Book position: {self.title}"
+    
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            # generate the slug and import Slugify up
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
 
 class Book(models.Model):
