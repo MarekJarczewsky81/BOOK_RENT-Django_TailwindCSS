@@ -25,12 +25,7 @@ class BookTitle(models.Model):
         return self.book_set.all()
     
     
-    
-    
-    def get_books(self):
-        return self.books.all()
-    
-    
+
     
     def __str__(self):
         return f"Book position: {self.title}"
