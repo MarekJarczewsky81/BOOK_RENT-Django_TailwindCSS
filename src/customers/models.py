@@ -1,7 +1,6 @@
 from django.db import models
 from books.models import Book
 from django.utils.text import slugify
-
 # Create your models here.
 
 

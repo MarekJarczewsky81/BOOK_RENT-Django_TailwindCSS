@@ -25,7 +25,7 @@ class Rental(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.book.book_id} rented by {self.customer.username}'
+        return f'{self.book.isbn} rented by {self.customer.username}'
 
     def save(self, *args, **kwargs):
         if not self.rent_end_date:
