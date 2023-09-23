@@ -1,0 +1,101 @@
+W tym filmie chcę dać ci bardzo krótkie wprowadzenie do Django M4.
+
+Architektura.
+
+Tak więc M4 to skrót od Models View templates.
+
+Zapoznaliśmy się już z modelami.
+
+Wiemy więc, że model reprezentuje dane lub tabelę bazy danych.
+
+Dobrze.
+
+Więc wiemy, że w modelach możemy tworzyć klasy, które reprezentują tabelę bazy danych, a następnie mamy
+
+pola, które reprezentują kolumny w tej konkretnej tabeli bazy danych.
+
+Obiekty, które tworzymy w tej konkretnej klasie, są po prostu wierszami w tabeli.
+
+Tak więc w modelach możemy również obsługiwać logikę biznesową i zobaczymy kilka bardziej wyrafinowanych przykładów w dalszej części kursu.
+
+w dalszej części kursu.
+
+Teraz jednak skupmy się na kilku podstawowych informacjach, dostarczając podstawowych informacji na temat widoków
+
+i szablonów.
+
+Tak więc widoki mogą również obsługiwać logikę biznesową, ale zajmują się również żądaniami użytkownika, pobieraniem
+
+danych z modeli, a także renderowaniem szablonów.
+
+Szablony definiują sposób, w jaki dane powinny być prezentowane użytkownikowi.
+
+Jedyną rzeczą, której tutaj brakuje, są adresy URL.
+
+Jest to bardzo ważna koncepcja, ponieważ adresy URL dbają o mapowanie żądań użytkowników do odpowiednich widoków.
+
+widoków.
+
+Jeśli więc spojrzymy na następny slajd, mamy kilka bardzo podstawowych przykładów.
+
+Mamy adresy naszego lokalnego serwera deweloperskiego z kilkoma podstawowymi przykładami konfiguracji.
+
+Pierwszy z nich może wskazywać, że przechodzimy do strony głównej, a na stronie głównej możemy po prostu zdefiniować
+
+jako widok, na przykład widok domowy z domowym kodem HTML.
+
+Ok, więc możemy zmapować ten adres URL do tego widoku głównego.
+
+A ten widok główny ma szablon, którym jest domowy HTML.
+
+I to jest całkiem proste.
+
+Zrozumiesz to od razu, gdy zrobimy nasze pierwsze przykłady, ale potem mamy coś trochę bardziej skomplikowanego.
+
+nieco bardziej skomplikowane, ponieważ tutaj mamy posty.
+
+Może to oznaczać, że na przykład chcemy pobrać wszystkie dane postów z modeli.
+
+W widoku, a następnie przekazać je do szablonu.
+
+Więc dostaniemy się do views.py.
+
+w konkretnym widoku, wszystkie posty z bazy danych, z modeli, a następnie przekażemy je
+
+do szablonu HTML i tam je wyświetlimy.
+
+Następnie mamy stronę szczegółów.
+
+Możemy uzyskać dostęp do strony szczegółów za pomocą ID lub klucza głównego lub na przykład za pomocą slug.
+
+A jeśli chcemy uzyskać dostęp do strony szczegółów przez ID, musimy pobrać ten identyfikator w widoku.
+
+Dobrze.
+
+Pobierzemy go z tego konkretnego adresu URL jako argument słowa kluczowego.
+
+Dobrze.
+
+A następnie możemy napisać zapytanie, które chcemy uzyskać konkretny obiekt postu z tym identyfikatorem, a następnie możemy
+
+możemy przekazać ten obiekt postu do szablonu i to samo działa ze slugiem.
+
+Więc tutaj zamiast ID równego ID, mielibyśmy slug, jeśli slug byłby nazwą naszego pola i
+
+a następnie dopasowalibyśmy slug do slug tutaj, więc otrzymalibyśmy konkretny obiekt posta i przekazalibyśmy go do szablonu HTML, gdzie moglibyśmy go przekazać do szablonu HTML.
+
+do szablonu HTML, gdzie moglibyśmy po prostu wyświetlić szczegóły tego obiektu postu.
+
+Na przykład, kto jest autorem postu?
+
+Jaki jest tytuł posta?
+
+Czy istnieje treść posta?
+
+I tak dalej, i tak dalej.
+
+To tylko krótki przegląd tego, jak działa architektura szablonów widoku modelu, ale zrozumiemy to oczywiście w praktyce.
+
+zrozumiemy to oczywiście w praktyce.
+
+Zacznijmy więc.

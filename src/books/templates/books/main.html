@@ -3,11 +3,12 @@
 {% block title %}book title list{% endblock title %}
 
 {% block content %}
+    <h1>book title list</h1>
 
     {% if qs %}
         <ul>
             {% for el in qs %}
-                <li>{{el.title}}</li>
+                <li><a href="{% url 'books:detail' %}">{{el.title}}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
