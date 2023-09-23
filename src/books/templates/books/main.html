@@ -8,7 +8,7 @@
     {% if qs %}
         <ul>
             {% for el in qs %}
-                <li><a href="{% url 'books:detail' %}">{{el.title}}</a></li>
+                <li><a href="{% url 'books:detail' el.pk %}">{{el.title}}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
