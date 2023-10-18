@@ -31,3 +31,6 @@ class Rental(models.Model):
         if not self.rent_end_date:
             self.rent_end_date = self.rent_start_date + timedelta(days=14)
         super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ('-created',)
