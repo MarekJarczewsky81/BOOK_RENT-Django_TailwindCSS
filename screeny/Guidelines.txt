@@ -1,0 +1,84 @@
+Guidelines
+This is the base.html file for this challenge:
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Invites</title>
+  </head>
+  <body>
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+  </body>
+</html>
+
+
+Steps:
+
+Setting up the Django Project:
+
+Start by creating a new Django project.
+
+Install the pytz library.
+
+Creating Apps:
+
+Create two Django apps: invitations and users and add them to installed apps list in the settings.py
+
+Custom User Model:
+
+Inside the users app, create a custom user model with a timezone field, utilizing pytz to list all timezones.
+
+Register the custom user model in the Django admin.
+
+Update the AUTH_USER_MODEL setting in settings.py to use the custom user model.
+
+Invitations Model:
+
+In the invitations app, create an Invitation model with the following fields:
+
+name (CharField)
+
+participants (ManyToManyField to the User model)
+
+datetime (DateTimeField)
+
+Register the Invitation model in the Django admin.
+
+Views and URL Patterns:
+
+In the invitations app, create two class-based views: InvitationListView and InvitationDetailView.
+
+Define URL patterns for these views in the urls.py file of the invitations app. Ensure that the detail page is accessible by primary key (pk).
+
+Templates - Invitation List View:
+
+In the template for the list view, display the invitation names with links to the detail pages. You can use an unordered list for this purpose.
+
+Templates - Get Absolute URL:
+
+Implement a get_absolute_url method for the Invitation model and use it in the list view template to create links to the main page.
+
+Timezone Conversion:
+
+Create a custom template filter to convert the invitation's datetime to the user's local datetime using pytz.
+
+Templates - Invitation Detail View:
+
+In the template for the detail view, display the datetime of the invitation.
+
+Display all participants in an unordered list.
+
+Testing:
+
+Create at least three user instances with different timezones via the Django admin.
+
+Create 2-3 invitations also through the admin interface.
+
+Test the functionality to ensure that timezone conversions and views work correctly.
