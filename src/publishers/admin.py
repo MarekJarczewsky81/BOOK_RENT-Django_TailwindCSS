@@ -6,4 +6,15 @@ from import_export.admin import ExportActionMixin
 
 # Register your models here.
 
-admin.site.register(Publisher)
+class PublisherResource(resources.ModelResource):
+    class Meta:
+        model = Publisher
+        fields = ('id', 'name', 'country', 'created')
+    
+    
+    
+class PublisherAdmin(ExportActionMixin, admin.ModelAdmin):
+    resource_class = PublisherResource
+
+
+admin.site.register(Publisher, PublisherAdmin)
