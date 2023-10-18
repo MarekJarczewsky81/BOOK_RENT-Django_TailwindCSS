@@ -140,3 +140,5 @@ GitHub.sublime-settings
 
 BOOK_RENT-Django_TailwindCSS.code-workspace
 br_source_code.zip
+
+*.csv
