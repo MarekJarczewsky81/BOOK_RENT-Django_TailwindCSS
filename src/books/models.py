@@ -12,6 +12,12 @@ from io import BytesIO
 from django.core.files import File
 from PIL import Image
 
+STATUS_CHOICES = (
+    ('#0', 'rented'),
+    ('#1', 'returned'),
+    ('#2', 'lost'),
+    ('#3', 'delayed'),
+)
 
 class BookTitle(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -47,6 +53,16 @@ class Book(models.Model):
     def __str__(self):
         return str(self.title)
 
+
+    @property
+    def status(self):
+        if len(self.rental_set.all()) > 0:
+            statuses = dict(STATUS_CHOICES)
+            return statuses[self.rental_set.first().status]
+        return False
+        
+    
+    
     def save(self, *args, **kwargs):
         if not self.isbn:
             self.isbn = str(uuid.uuid4()).replace('-', '')[:24].lower()
