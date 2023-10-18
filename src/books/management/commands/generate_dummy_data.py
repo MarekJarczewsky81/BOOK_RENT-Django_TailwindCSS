@@ -48,7 +48,8 @@ class Command(BaseCommand):
         book_titles = BookTitle.objects.all()
         for title in book_titles:
             quantity = random.randint(1, 5)
-            Book.objects.create(title=title)
+            for i in range(quantity):
+                Book.objects.create(title=title)
 
         # generating custommers
         customers_list = [

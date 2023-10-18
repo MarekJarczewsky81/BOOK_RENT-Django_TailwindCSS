@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     
     # 3rd party apps
     'django_countries',
+    'import_export',
     
     
     
