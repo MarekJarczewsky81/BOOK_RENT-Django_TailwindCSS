@@ -8,12 +8,13 @@ from import_export.fields import Field
 # Register your models here.
 
 class PublisherResource(resources.ModelResource):
-    created = Field()
+    date = Field()
     class Meta:
         model = Publisher
-        fields = ('id', 'name', 'country', 'created')
+        fields = ('id', 'name', 'country', 'created', 'date')
+        # export_order = ('id', 'name', 'country', 'created', 'date')
         
-    def dehydrate_created(self, obj):
+    def dehydrate_date(self, obj):
         return obj.created.strftime("%d/%m/%y")
         
     
@@ -24,3 +25,6 @@ class PublisherAdmin(ExportActionMixin, admin.ModelAdmin):
 
 
 admin.site.register(Publisher, PublisherAdmin)
+
+
+
