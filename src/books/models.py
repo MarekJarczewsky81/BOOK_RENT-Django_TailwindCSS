@@ -11,13 +11,9 @@ import qrcode
 from io import BytesIO
 from django.core.files import File
 from PIL import Image
+from rentals.choices import STATUS_CHOICES
 
-STATUS_CHOICES = (
-    ('#0', 'rented'),
-    ('#1', 'returned'),
-    ('#2', 'lost'),
-    ('#3', 'delayed'),
-)
+
 
 class BookTitle(models.Model):
     title = models.CharField(max_length=200, unique=True)

@@ -2,14 +2,11 @@ from django.db import models
 from books.models import Book
 from customers.models import Customer
 from datetime import timedelta
+from .choices import STATUS_CHOICES
 # Create your models here.
 
-STATUS_CHOICES = (
-    ('#0', 'rented'),
-    ('#1', 'returned'),
-    ('#2', 'lost'),
-    ('#3', 'delayed'),
-)
+
+
 
 
 class Rental(models.Model):
