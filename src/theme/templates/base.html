@@ -12,13 +12,17 @@
 	</head>
 
 	<body class="bg-sky-300 dark:bg-slate-800 dark:text-white">
+		{% include 'layout/navbar.html' %}
 		<div class="grid grid-cols-12">
-			<div class="col-span-12">
+			<div class="col-span-1">
+				{% include 'layout/sidebar.html' %}
+			</div>
+			<div class="col-span-11">
 				<div class="pt-20 px-6">
 					<a href="{% url 'change' %}" class="fixed top-[150px] right-0 p-3 rounded-l-lg bg-slate-200 hover:bg-slate-300 dark:bg-yellow-400 dark:hover:bg-yellow-500 text-slate-900 drop-shadow-md transition-all">
 						<i class="fa-solid {% if not request.session.is_dark_mode %}fa-moon{% else %}fa-sun{% endif %} fa-xl"></i>
 					</a>
-					<hr>
+					
 					{% block content %}
 						
 					{% endblock content %}
