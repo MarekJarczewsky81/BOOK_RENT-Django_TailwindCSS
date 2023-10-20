@@ -5,6 +5,12 @@
 {% block content %}
     <h1>book title list</h1>
 
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="p-3 bg-blue-500 text-white">send</button>
+    </form>
+
     {% if qs %}
         <ul>
             {% for el in qs %}
