@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1>book title list</h1>
-
+    <div class="border bg-purple-200 rounded-xl p-3 h-10 w-10"></div>
     <form action="" method="POST">
         {% csrf_token %}
         {{form.as_p}}
@@ -14,7 +14,7 @@
     {% if qs %}
         <ul>
             {% for el in qs %}
-                <li><a href="{{el.get_absolute_url}}">{{el.title}}-{{el.get_absolute_url}}</a></li>
+                <li><a href="{{el.get_absolute_url}}">{{el.title}}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
