@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load widget_tweaks %}
 {% block title %}book title list{% endblock title %}
 
 {% block content %}
@@ -7,7 +7,8 @@
     <div class="border bg-purple-200 rounded-xl p-3 h-10 w-10"></div>
     <form action="" method="POST">
         {% csrf_token %}
-        {{form.as_p}}
+        {% comment %} {{form.as_p}} {% endcomment %}
+        {{form.title|add_class:'bg-slate-900 text-slate-400 p-3 rounded-2xl font-bold'}} {% comment %} this is from django-widget-tweaks 1.4.12  {% endcomment %}
         <button type="submit" class="p-3 bg-blue-500 text-white">send</button>
     </form>
 

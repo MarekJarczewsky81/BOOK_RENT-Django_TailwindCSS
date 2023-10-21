@@ -7,11 +7,11 @@ class BookTitleForm(forms.ModelForm):
         model = BookTitle
         fields = ('publisher', 'author', 'title')
         # we can add Tailwind classes and style a form by widgets !!!
-        widgets = {
-            'title': forms.TextInput(attrs={'class': 'border bg-purple-200 rounded-xl p-3'}),
-            'author': forms.Select(attrs={'class': 'border bg-purple-200 rounded-xl p-3'}),
-            'publisher': forms.Select(attrs={'class': 'border bg-purple-200 rounded-xl p-3'})
-        }
+        # widgets = {
+        #     'title': forms.TextInput(attrs={'class': 'border bg-purple-200 rounded-xl p-3'}),
+        #     'author': forms.Select(attrs={'class': 'border bg-purple-200 rounded-xl p-3'}),
+        #     'publisher': forms.Select(attrs={'class': 'border bg-purple-200 rounded-xl p-3'})
+        # }
         
     def clean(self):
         title = self.cleaned_data.get('title')
